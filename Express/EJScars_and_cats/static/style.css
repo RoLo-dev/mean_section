@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+html{
+    font-size: 18px;
+}
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+h1{
+    font-size: 3.5em;
+}
+.pic{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.main{
+    margin-top: 4em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5em;
+}
+.images{
+    width: 100%;
+}
