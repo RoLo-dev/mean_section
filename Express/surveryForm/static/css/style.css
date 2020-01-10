@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+h1{
+    font-size: 2.5em;
+}
+.main{
+    margin-top: 3.5em;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+form>*{
+    margin-bottom: 10px;
+}
+form{
+    width: 50%;
+}
+form input{
+    height: 2.5em;
+}
+form textarea{
+    height: 7em;
+}
+.submit-btn{
+    width: 30%;
+    border: 0;
+    outline: 0;
+    background-color: coral;
+    height: 3em;
+    cursor: pointer;
+}
