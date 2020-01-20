@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Restful Tasks API</title>
+</head>
+<body>
+  <header>
+    <div class="wrapper">
+      <h1>Restful Tasks API</h1>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrapper main-content">
+      <button id="all-tasks" class="btn" (click)='getTasksOnClick()'>Get all tasks</button>
+
+      <div class="container" *ngFor='let task of tasks'>
+        <p>{{ task.title }}</p>
+        <button class="btn" (click)='showTaskDetails(task)'>Show</button>
+      </div>
+
+      <div class="container" *ngIf='taskToShowDetails.title'>
+        <p>{{ taskToShowDetails.title }}</p>
+        <p>{{ taskToShowDetails.description }}</p>
+        <p>{{ taskToShowDetails.completed }}</p>
+        <p>{{ taskToShowDetails._id }}</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
