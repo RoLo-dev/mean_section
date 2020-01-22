@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Creating Tasks</title>
+</head>
+<body>
+  <header>
+    <div class="wrapper">
+      <h1>Creating and Editing Tasks</h1>
+    </div>
+  </header>
+
+  <section id="main" class="wrapper">
+    <h3>New Task</h3>
+    <form (submit)="createTask()" class="flex-col first-form">
+      <p>{{ newTask | json }}</p>
+      <input type="text" name="title" [(ngModel)]="newTask.title" placeholder="Title"/>
+      <input type="text" name="description" [(ngModel)]="newTask.description" placeholder="Description"/>
+      <input type="submit" value="Create">
+    </form>
+
+    <div class="tasks flex">
+
+      <div class="col">
+        <h3>Task List</h3>
+        <div class="task" *ngFor="let task of tasks">
+          <h4>{{ task.title }}</h4>
+          <p>{{ task.description }}</p>
+          <button class="btn" (click)="getTask(task._id)">Show Me</button>
+          <button class="btn" (click)="getTaskToUpdate(task._id)">Edit</button>
+          <button class="btn" (click)="deleteTask(task._id)">Delete</button>
+        </div>
+      </div>
+      <div class="col">
+        <div *ngIf="updateTask">
+          <h3> Edit task: {{ updateTask.title }}</h3>
+          <form (submit)="updatingTask()" class="flex-col">
+            <input type="text" name="title" [(ngModel)]="updateTask.title" placeholder="Title"/>
+            <input type="text" name="description" [(ngModel)]="updateTask.description" placeholder="Description">
+            <input type="submit" value="Edit">
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>
