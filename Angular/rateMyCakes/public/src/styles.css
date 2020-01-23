@@ -1,0 +1,93 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+h3{
+    margin-bottom: 1.5rem;
+}
+.pic{
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.btn{
+    background-color: transparent;
+    border: 1px solid #000;
+    transition: all 0.7s;
+}
+.btn:hover{
+    cursor: pointer;
+    color: #fff;
+    background-color: #000;
+    transition: all 0.3s;
+}
+
+/* Header */
+header{
+    width: 100%;
+    padding: 12px 0;
+}
+
+/* Body section */
+#main{
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    height: 45vh;
+}
+.col{
+    width: 48%;
+}
+.overflow{
+    overflow-y: scroll;
+}
+form>*{
+    margin-bottom: 12px;
+}
+form input{
+    height: 1.5rem;
+    font-size: 0.85rem;
+}
+
+/* This is for the reviews */
+.cake{
+    margin-bottom: 2.5rem;
+    height: 90%;
+}
+.image{
+    width: 48%;
+}
+.rating{
+    margin-top: 20%;
+}
+form textarea{
+    height: 3rem;
+    font-size: 0.85rem;
+    padding: 5px 0 0 3px;
+}
+.ratingForm{
+    width: 45%;
+}
+
+/* Showing info */
+#info{
+    margin-bottom: 1rem;
+}

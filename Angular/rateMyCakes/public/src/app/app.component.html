@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rate My Cakes</title>
+</head>
+<body>
+  <header>
+    <div class="wrapper">
+      <h1>Rate the cakes</h1>
+    </div>
+  </header>
+
+  <!-- <div *ngIf="errors">
+    <p *ngIf="errors.name" class="text-danger">{{ errors.name.message }}</p>
+    <p *ngIf="errors.image" class="text-danger">{{ errors.image.message }}</p>
+  </div> -->
+
+  <section id="main" class="wrapper flex">
+
+    <div class="col">
+      <h3>Submit a cake to be rated</h3>
+      <form class="flex-col" (submit)='createCake()'>
+        <input type="text" name="name" [(ngModel)]="newCake.name" placeholder="Baker Name">
+        <input type="text" name="image" [(ngModel)]="newCake.image" placeholder="Image URL">
+        <input type="submit" class="btn" value="SUBMIT">
+      </form>
+    </div>
+    <div class="col overflow">
+
+      <div class="cake flex" *ngFor="let cake of cakes">
+          <div class="image">
+              <img [src]="cake.image" (click)="getCake(cake._id)" class="pic">
+          </div>
+
+          <app-cake-review class="ratingForm"></app-cake-review>
+      </div>
+
+    </div>
+
+  </section>
+  <section id="info" class="wrapper">
+    <app-show></app-show>
+  </section>
+</body>
+</html>
+
+
+
+<router-outlet></router-outlet>

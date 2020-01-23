@@ -1,0 +1,17 @@
+<div class="cakeInfo">
+    <h3>Baked by {{ cakeToShow.name }}</h3>
+
+    <div class="details flex">
+        <div class="image">
+            <img [src]="cakeToShow.image" class="pic">
+        </div>
+        <div class="text">
+            <h4>Average rating: {{ cakeToShowAvg }}</h4>
+            <div class="cakeRating">
+                <p>{{ review.rating }}</p>
+                <p>{{ review.comment }}</p>
+            </div>
+        </div>
+    </div>
+
+</div>
