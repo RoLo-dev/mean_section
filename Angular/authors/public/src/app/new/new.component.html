@@ -1,0 +1,12 @@
+<a [routerLink]="['/home']">Home</a>
+
+<div *ngIf="error">
+    <p>{{error}}</p>
+</div>
+
+<p>Add a new author:</p>
+<form (submit)=onSubmitNewAuthor()>
+    <input type="text" name="name" placeholder="Author name" [(ngModel)]="newAuthor.name">
+    <a [routerLink]="['/home']" class="btn">Cancel</a>
+    <input type="submit" value="Submit">
+</form>

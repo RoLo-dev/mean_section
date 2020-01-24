@@ -1,0 +1,21 @@
+const express = require('express');
+const app = express();
+const path = require('path');
+const flash = require('express-flash');
+const session = require('express-session');
+
+app.use(session({
+    secret: 'keyboardkitteh',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 }
+}));
+app.use(flash());
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.use(express.static(path.join(__dirname, 'public/dist/public')))
+
+require('./server/config/mongoose')
+require('./server/config/routes')(app)
+
+app.listen(8000, () => console.log("listening on port 8000"));
